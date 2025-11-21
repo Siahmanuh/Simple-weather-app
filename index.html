@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherCloud - Real-Time Cloud Formation Tracker</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>WeatherCloud</h1>
+            <p>Real-Time Cloud Formation & Weather Tracker</p>
+        </header>
+
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" id="location-input" placeholder="Enter city name or zip code...">
+                <button id="search-btn">Search</button>
+                <button id="current-location-btn">Use My Location</button>
+            </div>
+        </div>
+
+        <main class="app-content">
+            <div class="weather-info">
+                <div class="current-weather">
+                    <h2 id="location-name">Current Location</h2>
+                    <div class="weather-main">
+                        <div class="temperature" id="temperature">--°C</div>
+                        <div class="weather-description" id="weather-description">--</div>
+                    </div>
+                    <div class="weather-details">
+                        <div class="detail-item">
+                            <span class="label">Humidity</span>
+                            <span class="value" id="humidity">--%</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Area Wetness</span>
+                            <span class="value" id="precipitation">-- mm</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Cloud Cover</span>
+                            <span class="value" id="cloud-cover">--%</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Wind Speed</span>
+                            <span class="value" id="wind-speed">-- m/s</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="forecast">
+                    <h3>5-Day Forecast</h3>
+                    <div class="forecast-list" id="forecast-list">
+                        <!-- Forecast items will be inserted here -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="map-container">
+                <div id="weather-map"></div>
+                <div class="map-controls">
+                    <button id="toggle-clouds">Show Cloud Cover</button>
+                    <button id="toggle-precipitation">Show Precipitation</button>
+                    <button id="toggle-humidity">Show Humidity</button>
+                </div>
+                <div class="legend" id="cloud-legend">
+                    <h4>Cloud Cover</h4>
+                    <div class="legend-gradient"></div>
+                    <div class="legend-labels">
+                        <span>Clear</span>
+                        <span>Overcast</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Data provided by OpenWeatherMap | Map data © OpenStreetMap contributors</p>
+        </footer>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
